@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Tool Collector</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+    <div class="jumbotron">
+      <h1 class="text-center">Buy Tools!</h1>
+      <div class="text-center">
+        <br><button id="startbutton" class="btn btn-primary"><h1>PRESS START!</h1></button>
+        <br><br>
+        <button id="tool1button" class="btn btn-primary"><h1>--[]</h1></button>
+        <button id="tool2button" class="btn btn-primary"><h1>__o---o</h1></button>
+        <button id="tool3button" class="btn btn-primary"><h1>[-]</h1></button>
+        <button id="tool4button" class="btn btn-primary"><h1>V==</h1></button>
+
+      </div>
+
+    </div>
+
+    <div class="container">
+
+      <div class="text-center">You will be given a random cost goal at the start.<br>
+      There are 4 tools above. By clicking each one you will add a specific amount of cost to your purchase. <br>
+      You win the game by matching your purchase to the random goal provided. You will lose if your purchase does not match. <br>
+      The value of each tool is hidden from you unitl you click on it.<br>
+      Each time when the game starts, the game will change the values of each tool.<br>
+      </div><br>
+
+      <div class="text-center">Goal: $ </div><br>
+      <div class="text-center" id="goal">
+
+      </div>
+
+      <div class="text-center">Your purchase: </div>
+      <div class="text-center" id="userScore">
+
+      </div>
+
+
+    </div>
+
+  </body>
+    <script type="text/javascript">
+
+      var goalPurchase = "";
+      var userPurchase = "";
+
+
+      $("#startbutton").on("click", function(){
+        for (var i=30; i<50; i++){
+          var random = Math.floor(Math.random() * 50)+30;
+          goalPurchase++;
+        }
+
+        console.log(goalPurchase);
+
+        $("#goal").html("<h1>" + goalPurchase + "<h1>")
+
+      })
+
+      $("#tool1button").on("click", function(){
+        for (var i=0; i<1; i++){
+          var random = Math.floor(Math.random() * 9)+3;
+          userPurchase++;
+        }
+        console.log(userPurchase);
+        $("#userScore").html("<h1>" + userPurchase + "<h1>")
+      })
+
+      $("#tool2button").on("click", function(){
+        for (var i=0; i<2; i++){
+          var random = Math.floor(Math.random() * 9)+1;
+          userPurchase++;
+        }
+        console.log(userPurchase);
+        $("#userScore").html("<h1>" + userPurchase + "<h1>")
+
+      })
+
+      $("#tool3button").on("click", function(){
+        for (var i=0; i<3; i++){
+          var random = Math.floor(Math.random() * 9)+1;
+          userPurchase++;
+        }
+
+        console.log(userPurchase);
+
+        $("#userScore").html("<h1>" + userPurchase + "<h1>")
+
+      })
+      $("#tool4button").on("click", function(){
+        for (var i=0; i<4; i++){
+          var random = Math.floor(Math.random() * 9)+1;
+
+          userPurchase++;
+
+        }
+
+        console.log(userPurchase);
+
+        $("#userScore").html("<h1>" + userPurchase + "<h1>")
+
+      })
+
+    </script>
+
+</html>
